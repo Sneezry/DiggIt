@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="media/spider.png" />
+    <title>DiggIt - Discover SSH enabled devices in your local network</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="vue.min.js"></script>
+  </head>
+  <body>
+    <div id="main" v-cloak>
+      <div class="table-head">
+        <ul>
+          <li></li>
+          <li>IP</li>
+          <li>Host Name</li>
+          <li>MAC Address</li>
+        </ul>
+      </div>
+      <div class="loading-bar" v-if="loading.value"></div>
+      <div class="no-device" v-if="devices.value.length === 0">No device discovered, yet :-/</div>
+      <div class="table-row" v-for="device in devices.value">
+        <ul>
+          <li><img v-bind:src="'media/' + device.id + '.svg'"></li>
+          <li>{{device.ip}}</li>
+          <li>{{device.host.replace(/\.local$/, '')}}</li>
+          <li>{{device.mac}}</li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      // You can also require other files to run in this process
+      require('./out/renderer.js')
+    </script>
+  </body>
+</html>

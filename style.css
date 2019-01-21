@@ -1,0 +1,116 @@
+@font-face {
+  font-family: 'Quicksand';
+  font-style: normal;
+  font-weight: 400;
+  src: url('media/quicksand-v8-vietnamese_latin-ext_latin-regular.woff2') format('woff2');
+}
+
+[v-cloak] {
+  display: none;
+}
+
+@keyframes loading {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  padding-top: 33px;
+  box-sizing: border-box;
+  font-family: 'Quicksand';
+}
+
+.table-head {
+  position: fixed;
+  top: 0;
+  background: white;
+  border-bottom: 1px solid #eee;
+  width: 100%;
+}
+
+.table-head ul,
+.table-row ul {
+  margin: 0;
+  padding: 0;
+  display: block;
+  list-style: none;
+}
+
+.table-head ul::after,
+.table-row ul::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.table-head ul li {
+  font-weight: bold;
+}
+
+.table-head ul li,
+.table-row ul li {
+  display: block;
+  float: left;
+  padding: 0 10px;
+  box-sizing: border-box;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 32px;
+  line-height: 32px;
+}
+
+.table-head ul li:nth-child(1),
+.table-row ul li:nth-child(1) {
+  width: 40px;
+}
+
+.table-row ul li:nth-child(1) img {
+  width: 20px;
+  height: 20px;
+  vertical-align: top;
+  position: relative;
+  top: 6px;
+}
+
+.table-head ul li:nth-child(2),
+.table-row ul li:nth-child(2) {
+  width: 100px;
+}
+
+.table-head ul li:nth-child(3),
+.table-row ul li:nth-child(3) {
+  width: 210px;
+}
+
+.table-head ul li:nth-child(4),
+.table-row ul li:nth-child(4) {
+  width: 150px;
+}
+
+.loading-bar {
+  animation: loading 10s ease-in-out;
+  height: 1px;
+  position: fixed;
+  top: 32px;
+  left: 0;
+  background: #4286f4;
+}
+
+.no-device {
+  text-align: center;
+  font-size: 24px;
+  height: 100px;
+  line-height: 100px;
+  color: #ccc;
+}

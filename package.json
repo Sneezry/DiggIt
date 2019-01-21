@@ -1,0 +1,27 @@
+{
+  "name": "diggit",
+  "version": "1.0.0",
+  "description": "Discover SSH enabled devices in your local network",
+  "main": "main.js",
+  "scripts": {
+    "compile": "tsc -p .",
+    "start": "tsc -p . && electron .",
+    "pack": "tsc -p . && electron-builder --dir",
+    "dist": "tsc -p . && electron-builder"
+  },
+  "repository": "https://github.com/Sneezry/DiggIt",
+  "author": "Li Zhe",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^4.0.1",
+    "electron-builder": "^20.38.5"
+  },
+  "dependencies": {
+    "molehole": "^0.1.3"
+  },
+  "build": {
+    "win": {
+      "icon": "media/spider.ico"
+    }
+  }
+}
